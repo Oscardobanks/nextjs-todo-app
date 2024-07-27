@@ -20,8 +20,8 @@ const TodoDetail = () => {
 
   const handleUpdate = async (title) => {
     try {
-      const updatedTodo = { id: todo.id, title, completed: todo.completed };
-      dispatch(updateTodo(updatedTodo));
+      const updatedTodos = todos.map((t) => (t.id === todo.id ? { ...t, title } : t));
+      dispatch(updateTodo(updatedTodos));
       dispatch(fetchTodos());
       dispatch(resetTodo());
       router.back();
@@ -29,6 +29,10 @@ const TodoDetail = () => {
       console.error(error);
     }
   };
+
+  const handleResetTodo = () => {
+    dispatch(resetTodo());
+  }
 
   if (status === "loading") {
     return <div className="text-center mt-48">Loading...</div>;
@@ -45,7 +49,7 @@ const TodoDetail = () => {
       </div>
 
       <div className="max-w-md mx-auto mt-8">
-        <Link href="/">
+        <Link onClick={handleResetTodo} href="/">
           <span className="text-blue-500 hover:text-blue-700">Back to Home</span>
         </Link>
       </div>

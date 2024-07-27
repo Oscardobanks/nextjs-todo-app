@@ -26,8 +26,8 @@ export default function Home() {
 
   const handleCreate = async (title) => {
     try {
-      const todo = { id: Date.now(), title, completed: false };
-      dispatch(createTodo(todo));
+      const newTodo = { id: Date.now(), title, completed: false };
+      dispatch(createTodo(newTodo));
     } catch (error) {
       console.error(error);
     }
