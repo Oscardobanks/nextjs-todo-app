@@ -36,7 +36,7 @@ const todosSlice = createSlice({
       state.todo = null;
     },
     createTodo: (state, action) => {
-      state.todos.push(action.payload);
+      state.todos = [action.payload, ...state.todos];
     },
     updateTodo: (state, action) => {
       const index = state.todos.findIndex(

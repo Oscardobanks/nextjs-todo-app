@@ -53,6 +53,13 @@ const TodoDetail = () => {
           <span className="text-blue-500 hover:text-blue-700">Back to Home</span>
         </Link>
       </div>
+      <div className="max-w-md mx-auto my-8">
+        <div className="flex flex-col gap-4 items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
+          <p className="text-lg font-bold">{todo?.id}</p>
+          <p className="text-xl font-bold">{todo?.title}</p>
+          <p className={`text-lg ${todo?.completed == true ? 'text-green-500' : 'text-red-500'}`}> {todo?.completed == true ? 'Task Completed' : 'Task has not been completed'}</p>
+        </div>
+      </div>
     </div>
   );
 };
