@@ -19,7 +19,7 @@ const TodoList = ({ todos, onToggleCompleted, onDelete }) => {
               type="checkbox"
               checked={todo.completed}
               onChange={() => handleToggleCompleted(todo.id)}
-              className="flex items-center justify-center w-4 h-4 rounded-sm border-gray-300 dark:border-gray-600"
+              className="flex items-center justify-center w-4 h-4 rounded-sm border-gray-300 dark:border-gray-600 cursor-pointer"
             />
             <Link href={`/todo/${todo.id}`}>
               <span className="text-lg font-medium text-gray-800 dark:text-gray-200">

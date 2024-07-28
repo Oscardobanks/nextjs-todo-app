@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import TodoForm from "@/app/todoForm/page";
-import { fetchTodo, fetchTodos, getTodoData, resetTodo, updateTodo } from "@/app/store/store";
+import { fetchTodo, getTodoData, resetTodo, updateTodo } from "@/app/store/store";
 
 const TodoDetail = () => {
   const pathname = usePathname();
@@ -20,9 +20,9 @@ const TodoDetail = () => {
 
   const handleUpdate = async (title) => {
     try {
-      const updatedTodos = todos.map((t) => (t.id === todo.id ? { ...t, title } : t));
+      const updatedTodo = { ...todo, title };
+      const updatedTodos = todos.filter((t) => t.id !== todo.id).concat(updatedTodo);
       dispatch(updateTodo(updatedTodos));
-      dispatch(fetchTodos());
       dispatch(resetTodo());
       router.back();
     } catch (error) {
