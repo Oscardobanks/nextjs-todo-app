@@ -9,7 +9,7 @@ const TodoList = ({ todos, onToggleCompleted, onDelete }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      {todos.map((todo) => (
+      {todos?.map((todo) => (
         <div
           key={todo.id}
           className="flex items-center justify-between p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
@@ -19,7 +19,7 @@ const TodoList = ({ todos, onToggleCompleted, onDelete }) => {
               type="checkbox"
               checked={todo.completed}
               onChange={() => handleToggleCompleted(todo.id)}
-              className="flex items-center justify-center w-4 h-4 rounded-sm border-gray-300 dark:border-gray-600 cursor-pointer"
+              className="flex items-center justify-center min-w-4 min-h-4 rounded-sm border-gray-300 dark:border-gray-600 cursor-pointer"
             />
             <Link href={`/todo/${todo.id}`}>
               <span className="text-lg font-medium text-gray-800 dark:text-gray-200">
