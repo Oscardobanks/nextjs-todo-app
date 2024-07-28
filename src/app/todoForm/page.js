@@ -17,7 +17,7 @@ const TodoForm = ({ todo, onSubmit }) => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="flex-1 p-4 rounded-lg border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+          className="flex-1 text-black p-4 rounded-lg border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
           placeholder="Add a new todo..."
         />
         <button
