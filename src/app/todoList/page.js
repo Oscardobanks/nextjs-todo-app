@@ -1,7 +1,6 @@
 'use client' 
 import React from "react";
 import Link from "next/link";
-// import { FaTrash } from "react-icons/fa";
 
 const TodoList = ({ todos, onToggleCompleted, onDelete }) => {
   const handleToggleCompleted = (todoId) => {
@@ -30,10 +29,8 @@ const TodoList = ({ todos, onToggleCompleted, onDelete }) => {
           </div>
           <button
             onClick={() => onDelete(todo.id)}
-            // className="flex items-center justify-center w-8 h-8 text-red-500 transition-colors hover:text-red-600 dark:hover:text-red-400"
-              className="border border-red-500 text-white bg-red-500 py-2 px-5 rounded-sm hover:text-red-500 hover:bg-white" 
+            className="border border-red-500 text-white bg-red-500 py-2 px-5 rounded-sm hover:text-red-500 hover:bg-white" 
           >
-            // <FaTrash />
               Delete
           </button>
         </div>
